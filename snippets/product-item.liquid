@@ -1,0 +1,21 @@
+<li>{{ forloop.index }}. <a href="{{ product.url }}">{{ product.title | replace: 'pant', 'trousers' }}</a>
+<br><small>{{ product.description | strip_html | truncate: 40,  '[more]' | default: 'No description yet' }}</small>
+{% if show_price %}
+  {% if product.compare_at_price > product.price %}
+    - <s>{{ product.compare_at_price | money }}</s> {{ product.price | money }} <strong>SALE</strong>
+  {% else %}
+    - {{ product.price | money }}
+  {% endif %}
+{% endif %}
+{% if product.variants.size > 1 %}
+  <select class="variant-select">
+    {% for variant in product.variants %}
+      <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+    {% endfor %}
+  </select>
+{% endif %}
+{% if product.available %}
+  <button class="add-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}">Add to cart</button>
+{% else %}
+  <em>Sold out</em>
+{% endif %}</li>
