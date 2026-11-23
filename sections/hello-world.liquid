@@ -50,6 +50,7 @@
 <p>{{ word | capitalize }}</p>
 <p>{{ word | append: ' is fun' }}</p>
 <p>{{ word | size }}</p>
+{% assign missing = '' %}
 <p>{{ missing | default: 'Nothing here' }}</p>
 
 {% capture greeting %} Hello,
@@ -72,6 +73,7 @@
 {% for product in sorted limit: section.settings.count %}
 {% render 'product-item', product: product, forloop: forloop, show_price: section.settings.show_price %}
 {% endfor %}
+</ul>
 {% assign all_products = collections.all.products%}
 {% assign in_stock = all_products | where: 'available', true %}
 <p>All products: {{ all_products | size }} |In stock: {{ in_stock | size }}</p>
@@ -180,7 +182,7 @@
   {% endfor %}
 </ul>
 <p>Total: <strong id="cart-total">{{ cart.total_price | money }}</strong></p>
-<p><a href="/cart">View cart</a></p>
+<p><a href="{{ routes.cart_url }}">View cart</a></p>
 
 <script src="{{ 'cart-ajax.js' | asset_url }}" defer></script>
 
