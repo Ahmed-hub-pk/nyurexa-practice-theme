@@ -1,0 +1,37 @@
+<section class="faq">
+  <h2>{{ section.settings.heading }}</h2>
+  {% for block in section.blocks %}
+    <details {{ block.shopify_attributes }}>
+      <summary>{{ block.settings.question }}</summary>
+      <p>{{ block.settings.answer }}</p>
+    </details>
+  {% endfor %}
+</section>
+
+{% stylesheet %}
+  .faq details { border: 1px solid #ddd; border-radius: 6px; padding: 12px; margin-bottom: 8px; background: #fff; }
+  .faq summary { cursor: pointer; font-weight: bold; }
+  .faq summary:focus-visible { outline: 3px solid #000; outline-offset: 2px; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently asked questions" }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "What is your return policy?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "You can return items within 14 days." }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "FAQ", "blocks": [ { "type": "question" }, { "type": "question" } ] }
+  ]
+}
+{% endschema %}
