@@ -9,12 +9,56 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "settings": {}
+    "banner_pYKnb8": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "image": "shopify://shop_images/davinci_create_an_ultra_realistic_luxury_beauty_hero_banne.png",
+        "heading": "Big winter sale",
+        "subtext": "Up to 30% off selected items",
+        "button_label": "Shop now",
+        "button_link": "shopify://collections"
+      }
+    },
+    "featured_products_bedeJY": {
+      "type": "featured-products",
+      "name": "Featured products",
+      "settings": {
+        "heading": "Featured products",
+        "product_count": 5
+      }
+    },
+    "faq_3VPJbp": {
+      "type": "faq",
+      "blocks": {
+        "question_mAhR6m": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship worldwide?",
+            "answer": "You can return items within 14 days."
+          }
+        },
+        "question_Lb3Bz6": {
+          "type": "question",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "You can return items within 14 days."
+          }
+        }
+      },
+      "block_order": [
+        "question_mAhR6m",
+        "question_Lb3Bz6"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "heading": "Frequently asked questions"
+      }
     }
   },
   "order": [
-    "main"
+    "banner_pYKnb8",
+    "featured_products_bedeJY",
+    "faq_3VPJbp"
   ]
 }
