@@ -13,10 +13,22 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu": ""
+      }
+    },
+    "announcement_bar_7UNTTM": {
+      "type": "announcement-bar",
+      "name": "Announcement bar",
+      "settings": {
+        "message": "Free delivery worldwide and a special discount on your first order",
+        "bg_color": "#CDCBC7",
+        "text_color": "#121212"
+      }
     }
   },
   "order": [
-    "header"
-  ],
+    "header",
+    "announcement_bar_7UNTTM"
+  ]
 }

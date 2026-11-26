@@ -1,0 +1,19 @@
+<div class="announcement-bar" style="background: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  {{ section.settings.message }}
+</div>
+
+{% stylesheet %}
+  .announcement-bar { text-align: center; padding: 10px; font-size: 14px; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    { "type": "text", "id": "message", "label": "Message", "default": "Free delivery over $50" },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#222222" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" }
+  ],
+  "presets": [{ "name": "Announcement bar" }]
+}
+{% endschema %}
